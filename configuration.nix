@@ -26,8 +26,11 @@
     package = pkgs.postgresql94;
   };
 
-  security.sudo.wheelNeedsPassword = false;
- 
+  security.sudo.extraConfig =
+  ''
+    bimorphic   ALL=(ALL) NOPASSWD:ALL, SETENV: ALL
+  '';
+
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
   networking.firewall.allowPing = true;
   networking.hostName = "bimorphic";
