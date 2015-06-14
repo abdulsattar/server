@@ -19,13 +19,14 @@
 
   services.nginx = {
     enable = true;
-    config = pkgs.lib.readFile /root/nginx.conf;
   };
 
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql94;
   };
+
+  security.sudo.wheelNeedsPassword = false;
  
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
   networking.firewall.allowPing = true;
