@@ -3,5 +3,6 @@
 # Copies configuration.nix to a home directory
 # and uses sudo to copy it /etc/nixos
 
-scp configuration.nix bas:configuration.nix &&
-ssh bas "sudo mv configuration.nix /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+ssh bas "mkdir -p /tmp/rebuild && rm -rf /tmp/rebuild/*"
+scp *.nix bas:/tmp/rebuild/ &&
+ssh bas "sudo mv /tmp/rebuild/*.nix /etc/nixos/ && sudo nixos-rebuild switch"
