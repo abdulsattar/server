@@ -4,5 +4,4 @@
 # and uses sudo to copy it /etc/nixos
 
 scp configuration.nix bas:configuration.nix &&
-ssh bas sudo cp configuration.nix /etc/nixos/configuration.nix &&
-ssh sudo nixos-rebuild switch
+ssh bas "sudo mv configuration.nix /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
