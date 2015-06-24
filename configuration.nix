@@ -1,6 +1,6 @@
 { config, pkgs, ...}:
 {
-  imports = [ ./amazon-base-config.nix ];
+  imports = [ ./amazon-base-config.nix ./nginx.nix ];
   ec2.hvm = true;
 
   users.extraUsers.bimorphic = {
@@ -24,10 +24,6 @@
     enable = true;
     permitRootLogin = pkgs.lib.mkForce "no";
     passwordAuthentication = false;
-  };
-
-  services.nginx = {
-    enable = true;
   };
 
   services.postgresql = {
