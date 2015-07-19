@@ -2,16 +2,6 @@
 {
   services.nginx = {
     enable = true;
-    config = ''
-      user www-data;
-      worker_processes 4;
-      pid /run/nginx.pid;
-
-      events {
-          worker_connections 768;
-            # multi_accept on;
-      }
-    '';
     httpConfig = ''
       ##
       # Basic Settings
@@ -27,8 +17,8 @@
       # server_names_hash_bucket_size 64;
       # server_name_in_redirect off;
       
-      include /etc/nginx/mime.types;
-      default_type application/octet-stream;
+      #include /etc/nginx/mime.types;
+      #default_type application/octet-stream;
       
       ##
       # Logging Settings
