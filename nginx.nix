@@ -65,7 +65,7 @@
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
 
-        root /usr/share/nginx/html;
+        root /var/www/bimorphic.com;
         index index.html index.htm;
 
         server_name test.bimorphic.com;
