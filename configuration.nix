@@ -20,6 +20,8 @@
   networking.firewall.allowPing = true;
   networking.hostName = "bimorphic";
 
+  environment.systemPackages = [ pkgs.git ];
+
   services.openssh = {
     enable = true;
     permitRootLogin = pkgs.lib.mkForce "no";
