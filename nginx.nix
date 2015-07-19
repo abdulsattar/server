@@ -17,8 +17,8 @@
       # server_names_hash_bucket_size 64;
       # server_name_in_redirect off;
 
-      #include /etc/nginx/mime.types;
-      #default_type application/octet-stream;
+      include ${pkgs.nginx}/conf/mime.types;
+      default_type application/octet-stream;
 
       ##
       # Logging Settings
