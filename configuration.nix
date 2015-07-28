@@ -33,5 +33,9 @@
     package = pkgs.postgresql94;
   };
 
+  services.mongodb = {
+    enable = true;
+  };
+
   nix.gc.automatic = true;
 }
