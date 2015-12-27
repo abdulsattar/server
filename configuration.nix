@@ -20,7 +20,7 @@
   networking.firewall.allowPing = true;
   networking.hostName = "bimorphic";
 
-  environment.systemPackages = [ pkgs.git ];
+  environment.systemPackages = [ pkgs.git pkgs.elixir ];
 
   services.openssh = {
     enable = true;
